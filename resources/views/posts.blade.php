@@ -7,6 +7,12 @@
     <title>Document</title>
 </head>
 <body>
-    {{ 1111111 }}
+    <div>
+        @foreach ($posts as $post)
+            <div>{{ $post->title }}</div>    
+            <div>{{ $post->content }}</div>  
+            <div>{{ $post->likes }}</div>  
+        @endforeach
+    </div>
 </body>
 </html>
