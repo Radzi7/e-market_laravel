@@ -5,12 +5,12 @@
     @csrf
       <div class="form-group mt-3">
         <label for="title">Title</label>
-          <input value="{{old('title')}}"
-           type="text" name="title" class="form-control" id="title" placeholder="Title">
-          @error('title')
-              <p class="text-danger"> {{ $message }}</p>
-          @enderror
-        </div>
+        <input value="{{old('title')}}"
+        type="text" name="title" class="form-control" id="title" placeholder="Title">
+        @error('title')
+          <p class="text-danger"> {{ $message }}</p>
+        @enderror
+      </div>
       <div class="form-group mt-3">
         <label for="content">Content</label>
         <textarea name="content" class="form-control" id="content" placeholder="Content">{{old('content')}}</textarea>
