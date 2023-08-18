@@ -2,13 +2,15 @@
 
 namespace App\Http\Controllers\Post;
 
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\Post\BaseController;
+use App\Http\Requests\Post\FilterRequest;
 use App\Models\Post;
-use Illuminate\Http\Request;
 
 class IndexController extends BaseController
 {
-    public function __invoke(Request $request){
+    public function __invoke(){
+        // $data = $request->validated();
+        // dd($data);
         $posts = Post::paginate(10);
         return view('post.index', compact('posts'));
     }    
