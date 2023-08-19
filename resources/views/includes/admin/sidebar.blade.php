@@ -7,7 +7,7 @@
           <li class="nav-item">
             <a href="pages/calendar.html" class="nav-link">
               <i class="nav-icon far fa-solid fa-comment-dots"></i>
-              <p>Posts                <span class="badge badge-info right">{{ $posts->total() }}</span>
+              <p>Posts<span class="badge badge-info right">{{ $posts->total() }}</span>
               </p>
             </a>
           </li>

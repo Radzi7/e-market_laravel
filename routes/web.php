@@ -15,7 +15,7 @@ use App\Http\Controllers\Post\UpdateController;
 use Illuminate\Support\Facades\Route;
 
 
-Route::get('/', [HomeController::class, 'index']);
+Route::get('/', [HomeController::class, 'index'])->name('home');
 
 Route::group(['namespace'=>'App\Http\Controllers\Post'], function(){
     Route::get('/posts', 'IndexController' )->name('post.index');
@@ -37,7 +37,7 @@ Route::group(['namespace'=>'App\Http\Controllers\Post'], function(){
 
 // Route::get('/posts/update', [PostController::class, 'update']);
 // Route::get('/posts/delete', [PostController::class, 'delete']);
-Route::group([ 'prefix' => 'admin'], function(){
+Route::group([ 'prefix' => 'admin', 'middleware' => 'admin'], function(){
         Route::group(['namespace'=>'App\Http\Controllers\Admin\Post'], function(){
 
         Route::get('/post',  'IndexController')->name('admin.post.index');
