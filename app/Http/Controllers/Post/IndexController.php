@@ -9,8 +9,7 @@ use App\Models\Post;
 class IndexController extends BaseController
 {
     public function __invoke(){
-        // $data = $request->validated();
-        // dd($data);
+        // $this->authorize('view', auth()->user());
         $posts = Post::paginate(10);
         return view('post.index', compact('posts'));
     }    
